@@ -9,10 +9,18 @@
             "email": "138868082@qq.com"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
             "Hart\\QrCode\\": "src/"
         }
+    },
+    "repositories":[
+        {
+            "type":"vcs",
+            "url":"https://github.com/LiHengc/HartCode"
+        }
+    ],
+    "require": {
+        "lee/hart-qr-code":"dev-master"
     }
 }
