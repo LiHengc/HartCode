@@ -27,13 +27,13 @@ use Hart\QrCode\HartQrcode;
 $hartqrCode = new HartQrcode($url, $path, $save);
 
 //创建原始二维码 必须
-$hartqrCode->create_qrcode();
+$hartqrCode->create_qrcode($size = 200);
 
 //获取原始二维码
 $hartqrCode->get_qrcode();
 
 //创建带背景图的二维码 
-$hartqrCode->create_bg_qrcode();
+$hartqrCode->create_bg_qrcode($x = 260, $y = 700, $qrcode_size = 300);
 
 //获取带背景图带二维码
 $hartqrCode->get_bg_qrcode();
