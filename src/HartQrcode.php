@@ -5,7 +5,7 @@ namespace Hart\QrCode;
 
 use Endroid\QrCode\QrCode;
 
-define('DS', DIRECTORY_SEPARATOR);
+defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 defined('VENDOR_PATH') or define('VENDOR_PATH', $_SERVER['DOCUMENT_ROOT'] . DS . 'vendor' . DS);
 
 class HartQrcode
