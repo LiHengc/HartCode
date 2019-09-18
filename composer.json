@@ -1,6 +1,8 @@
 {
     "name": "liheng/hart-qr-code",
-    "description": "qrcode",
+    "description": "hart-qrcode",
+    "homepage": "https://github.com/LiHengc/HartCode",
+    "keywords": ["liheng", "qrcode", "qr", "code"],
     "type": "library",
     "license": "MIT",
     "authors": [
