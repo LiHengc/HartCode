@@ -6,5 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Hart\\QrCode\\' => array($baseDir . '/src'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Symfony\\Component\\PropertyAccess\\' => array($vendorDir . '/symfony/property-access'),
+    'Symfony\\Component\\OptionsResolver\\' => array($vendorDir . '/symfony/options-resolver'),
+    'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
+    'Hart\\QrCode\\' => array($baseDir . '/src', $vendorDir . '/lihengc/hart-qr-code/src'),
+    'Endroid\\QrCode\\' => array($vendorDir . '/endroid/qrcode/src'),
 );

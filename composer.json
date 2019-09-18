@@ -1,5 +1,5 @@
 {
-    "name": "lihengc/hart-qr-code",
+    "name": "lee/hart-qr-code",
     "description": "qrcode",
     "type": "library",
     "license": "MIT",
@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "lee/hart-qr-code":"dev-master",
+        "lihengc/hart-qr-code":"dev-master",
         "php": ">=5.4.0",
         "endroid/qrcode": "^2.5"
     }
