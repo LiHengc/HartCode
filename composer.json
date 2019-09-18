@@ -1,11 +1,11 @@
 {
-    "name": "lee/hart-qr-code",
+    "name": "lihengc/hart-qr-code",
     "description": "qrcode",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "harthali",
+            "name": "lihengc",
             "email": "138868082@qq.com"
         }
     ],
