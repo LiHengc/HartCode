@@ -18,4 +18,12 @@ class HartQrcode
         return 'Hello ' . $this->name;
     }
 
+    /**
+     * @return string
+     */
+    public function yii()
+    {
+        return 'yii ' . $this->name;
+    }
+
 }
