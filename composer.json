@@ -23,5 +23,6 @@
     "require": {
         "php": ">=5.4.0",
         "endroid/qrcode": "^2.5"
-    }
+    },
+    "version": "1.0.0"
 }

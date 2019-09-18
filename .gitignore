@@ -2,3 +2,5 @@
 vendor/
 composer.lock
 qrcodetmp/
+v1.png
+test.php

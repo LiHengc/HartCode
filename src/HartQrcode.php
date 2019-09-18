@@ -136,6 +136,8 @@ class HartQrcode
      */
     public function get_qrcode()
     {
+        ob_clean();
+
         header("content-type: image/png");
 
         echo $this->qrcode;
@@ -148,6 +150,8 @@ class HartQrcode
      */
     public function get_bg_qrcode()
     {
+        ob_clean();
+
         header("content-type: image/png");
 
         echo $this->bg_qrcode;
