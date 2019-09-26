@@ -18,7 +18,7 @@ $ composer require liheng/hart-qr-code
 ```php
 use Hart\QrCode\HartQrcode;
 
-//初始化
+//初始化  所有方法都不是必传，选择性传入
 /*
  * $url = 'http://www.baidu.com' 
  * $path = "v1.png"; 背景地址
@@ -27,19 +27,32 @@ use Hart\QrCode\HartQrcode;
 $hartqrCode = new HartQrcode($url, $path, $save);
 
 //创建原始二维码 必须
+/*
+ * $size = 200;二维码大小 
+ */
 $hartqrCode->create_qrcode($size = 200);
 
-//获取原始二维码
+//输出原始二维码 
 $hartqrCode->get_qrcode();
 
 //创建带背景图的二维码 
+/*
+ * $x = 260; x轴
+ * $y = 700; y轴
+ * $qrcode_size = 300; 重新定义二维码大小
+ */
 $hartqrCode->create_bg_qrcode($x = 260, $y = 700, $qrcode_size = 300);
 
-//获取带背景图带二维码
+//输出带背景图的二维码
 $hartqrCode->get_bg_qrcode();
 
-//获取带背景图的二维码路径 如果没有创建带背景图的二维码 则获取的是原始二维码地址
-$hartqrCode->get_qrcode_path();
+//获取二维码路径 前提是你不要删除他～
+//如果你想获取原始的二维码路径那么请不要创建背景图 反之想获取带背景图的二维码那么请先创建
+/*
+ * $is_relative = true; 是否获取相对路径
+ * $url = ""; 如需拼接url或者路径地址你也可以自己传入
+ */
+$hartqrCode->get_qrcode_path($is_relative,$url);
 
 ```
 

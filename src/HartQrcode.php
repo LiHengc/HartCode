@@ -18,6 +18,7 @@ class HartQrcode
     private $qrcode;
     private $bg_qrcode;
     private $save;
+    private $path_name;
 
 
     /**
@@ -30,9 +31,17 @@ class HartQrcode
     {
         error_reporting(0);
 
+        if (php_sapi_name() == 'cli' )
+        {
+
+            throw \Exception("很抱歉,HartQrcode并不支持cli模式");
+
+        }
         $this->url = $url;
 
         $this->save = $save;
+
+        $this->path_name = DS."qrcodetmp".DS;
 
         $this->bgfile = $_SERVER['DOCUMENT_ROOT'] . DS . $bgfile;
 
@@ -75,7 +84,6 @@ class HartQrcode
 
         $qrCode->setText($this->url)
             ->setSize($size)//大小
-
             ->setLabelFontPath(VENDOR_PATH . 'endroid' . DS . 'qrcode' . DS . 'assets' . DS . 'noto_sans.otf')
             ->setErrorCorrectionLevel('high')
             ->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
@@ -160,11 +168,21 @@ class HartQrcode
     }
 
     /**
+     * @param bool $is_relative
+     * @param string $url or $relative_path
      * @return string
      */
-    public function get_qrcode_path()
+    public function get_qrcode_path($is_relative = false , $url = "" )
     {
-        return $this->save_path . $this->en_qrcode_name . $this->suttfix;
+        if ($is_relative)
+        {
+            return $url ? $this->path_name . $this->en_qrcode_name . $this->suttfix : $url . $this->path_name . $this->en_qrcode_name . $this->suttfix ;
+
+        }else{
+
+            return $this->save_path . $this->en_qrcode_name . $this->suttfix;
+
+        }
     }
 
     /**
@@ -174,11 +192,11 @@ class HartQrcode
     {
         if ($_SERVER['DOCUMENT_ROOT']) {
 
-            return $_SERVER['DOCUMENT_ROOT'] . "/qrcodetmp/";
+            return $_SERVER['DOCUMENT_ROOT'] . $this->path_name;
 
         } else {
 
-            return __DIR__ . '/qrcodetmp/';
+            return __DIR__ . $this->path_name;
 
         }
     }
